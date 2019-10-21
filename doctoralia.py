@@ -61,4 +61,3 @@ class DoctoraliaSpider(scrapy.Spider):
             'cidade': cidade,
             'telefone': telefone
         }
-        pass
