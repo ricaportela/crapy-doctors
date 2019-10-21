@@ -18,7 +18,7 @@ class DoctoraliaSpider(scrapy.Spider):
             )
 
     def parse_espec_cidade(self, response):
-        print(">>>> especialidades por cidades")
+        """ especialidades por cidades """
         espec_cidades = response.xpath(
             "//ul[@class='list-unstyled row']//a//@href").getall()
         for espec_cidade in espec_cidades:
@@ -28,7 +28,7 @@ class DoctoraliaSpider(scrapy.Spider):
             )
 
     def parse_medico_cidade(self, response):
-        print(">>>> medico por cidades")
+        """ medicos por cidade """
         medicos_cidades = response.xpath(
             "//ul[@class='search-list list-unstyled']//a//@href").getall()
         for medico_cidade in medicos_cidades:
@@ -49,7 +49,9 @@ class DoctoraliaSpider(scrapy.Spider):
             '/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[2]/div[1]/div[3]/div[2]/div/div[1]/div[2]/div[1]/div[2]/div/h5/span[3]//@content').get()
         cidade = response.xpath(
             '/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[2]/div[1]/div[3]/div[2]/div/div[1]/div[2]/div[1]/div[2]/div/h5/span[2]//@content').get()
-        telefone = ''
+        telefone = response.css(
+            'div.media:nth-child(8) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > a:nth-child(2) > b:nth-child(1)').get()
+
         yield {
             'titulo': titulo,
             'nome': nome,
