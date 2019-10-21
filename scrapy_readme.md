@@ -10,3 +10,16 @@ response.xpath("//ul[@class='list-unstyled row']//a//@href").getall()
 # scrapy shell https://www.doctoralia.com.br/urologista/sorocaba
 response.xpath("//ul[@class='search-list list-unstyled']//a//@href").getall() 
 
+# Buscar Campos
+titulo = response.xpath(
+            '/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[1]/div/div[1]/div[1]/div/div[3]/div/h1/div/span[1]//text()').get()
+nome = response.xpath(
+            '/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[1]/div/div[1]/div[1]/div/div[3]/div/h1/div/span[2]//text()').get()
+especialidade = response.xpath(
+            '/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[1]/div/div[1]/div[1]/div/div[3]/div/h2/a//text()').get()
+competencias = ''
+        estado = response.xpath(
+            '/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[2]/div[1]/div[3]/div[2]/div/div[1]/div[2]/div[1]/div[2]/div/h5/span[3]//@content').get()
+cidade = response.xpath(
+            '/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[2]/div[1]/div[3]/div[2]/div/div[1]/div[2]/div[1]/div[2]/div/h5/span[2]//@content').get()
+telefone = ''

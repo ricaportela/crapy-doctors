@@ -45,8 +45,18 @@ class DoctoraliaSpider(scrapy.Spider):
         especialidade = response.xpath(
             '/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[1]/div/div[1]/div[1]/div/div[3]/div/h2/a//text()').get()
         competencias = ''
-        estado = response.xpath('/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[2]/div[1]/div[3]/div[2]/div/div[1]/div[2]/div[1]/div[2]/div/h5/span[3]//@content').get() 
-        cidade = response.xpath('/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[2]/div[1]/div[3]/div[2]/div/div[1]/div[2]/div[1]/div[2]/div/h5/span[2]//@content').get()
+        estado = response.xpath(
+            '/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[2]/div[1]/div[3]/div[2]/div/div[1]/div[2]/div[1]/div[2]/div/h5/span[3]//@content').get()
+        cidade = response.xpath(
+            '/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[2]/div[1]/div[3]/div[2]/div/div[1]/div[2]/div[1]/div[2]/div/h5/span[2]//@content').get()
         telefone = ''
-        print(titulo, nome, ',', especialidade, ',', competencias, ',', estado, ',', cidade, ',', telefone )
+        yield {
+            'titulo': titulo,
+            'nome': nome,
+            'especialidade': especialidade,
+            'competencias': competencias,
+            'estado': estado,
+            'cidade': cidade,
+            'telefone': telefone
+        }
         pass
