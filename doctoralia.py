@@ -24,7 +24,7 @@ class DoctoraliaSpider(scrapy.Spider):
         for espec_cidade in espec_cidades:
             yield scrapy.Request(
                 response.urljoin(espec_cidade),
-                callback=self.parse_new
+                callback=self.parse_medico_cidade
             )
 
     
@@ -33,7 +33,7 @@ class DoctoraliaSpider(scrapy.Spider):
         medicos_cidades = response.xpath("//ul[@class='search-list list-unstyled']//a//@href").getall() 
         for medico_cidade in medicos_cidades:
             yield scrapy.Request(
-                response(medico_cidade),
+                response.urljoin(medico_cidade),
                 callback=self.parse_new
             )
 
