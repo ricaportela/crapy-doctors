@@ -17,20 +17,20 @@ class DoctoraliaSpider(scrapy.Spider):
                 callback=self.parse_espec_cidade
             )
 
-
     def parse_espec_cidade(self, response):
         print(">>>> especialidades por cidades")
-        espec_cidades = response.xpath("//ul[@class='list-unstyled row']//a//@href").getall()
+        espec_cidades = response.xpath(
+            "//ul[@class='list-unstyled row']//a//@href").getall()
         for espec_cidade in espec_cidades:
             yield scrapy.Request(
                 response.urljoin(espec_cidade),
                 callback=self.parse_medico_cidade
             )
 
-    
     def parse_medico_cidade(self, response):
         print(">>>> medico por cidades")
-        medicos_cidades = response.xpath("//ul[@class='search-list list-unstyled']//a//@href").getall() 
+        medicos_cidades = response.xpath(
+            "//ul[@class='search-list list-unstyled']//a//@href").getall()
         for medico_cidade in medicos_cidades:
             yield scrapy.Request(
                 response.urljoin(medico_cidade),
@@ -38,5 +38,15 @@ class DoctoraliaSpider(scrapy.Spider):
             )
 
     def parse_new(self, response):
-        print("testando>>>>>")
+        titulo = response.xpath(
+            '/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[1]/div/div[1]/div[1]/div/div[3]/div/h1/div/span[1]//text()').get()
+        nome = response.xpath(
+            '/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[1]/div/div[1]/div[1]/div/div[3]/div/h1/div/span[2]//text()').get()
+        especialidade = response.xpath(
+            '/html/body/div[1]/div[2]/main/div[2]/div[1]/div[2]/div[1]/div/div[1]/div[1]/div/div[3]/div/h2/a//text()').get()
+        competencias = ''
+        estado = ''
+        cidade = ''
+        telefone = ''
+        print(titulo, nome, ',', especialidade, ',', competencias, ',', estado, ',', cidade, ',', telefone )
         pass
