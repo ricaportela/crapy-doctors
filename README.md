@@ -7,12 +7,14 @@ pip install -r requirements.txt
 
 
 # busca especialidades 
-``` scrapy shell https://www.doctoralia.com.br/especializacoes-medicas/
+``` 
+scrapy shell https://www.doctoralia.com.br/especializacoes-medicas/
 response.xpath("//div[@class='display-flex justify-content-between align-items-center']//a[@class='text-muted']//@href").getall()
 ``` 
 
 # busca especialidades por cidades
-```  scrapy shell https://www.doctoralia.com.br/especializacoes-medicas/em-detalhe/urologista
+```  
+scrapy shell https://www.doctoralia.com.br/especializacoes-medicas/em-detalhe/urologista
 response.xpath("//ul[@class='list-unstyled row']//a//@href").getall()
 ``` 
 
