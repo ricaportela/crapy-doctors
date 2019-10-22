@@ -5,6 +5,7 @@ python3 -m venv .venv
 
 pip install -r requirements.txt
 
+scrapy runspider doctoralia.py -s HTTPCACHE_ENABLE=1 -s CLOSESPIDER_ITEMCOUNT=500 -o doctors.csv
 
 # busca especialidades 
 ``` 
