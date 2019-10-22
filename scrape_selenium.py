@@ -46,7 +46,7 @@ doutor_link.click()
 
 mostrar_telefone = driver.find_element(By.XPATH, '/html/body/div[1]/div[4]/main/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[4]/div[2]/div/div[1]/button')
 
-mostrar_telefone = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH,  '/html/body/div[1]/div[4]/main/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[4]/div[2]/div/div[1]/button')))
+# mostrar_telefone = WebDriverWait(driver, 20).until(EC.presence_of_element_located((By.XPATH,  '/html/body/div[1]/div[4]/main/div[2]/div[1]/div[2]/div[2]/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[4]/div[2]/div/div[1]/button')))
 
 mostrar_telefone.click()
 
