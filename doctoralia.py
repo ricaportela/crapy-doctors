@@ -3,7 +3,7 @@ import scrapy
 
 class DoctoraliaSpider(scrapy.Spider):
     name = 'doctoralia'
-
+    allowed_dmains = 'www.doctoralia.com.br'
     start_urls = [
         'https://www.doctoralia.com.br/especializacoes-medicas'
     ]

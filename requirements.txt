@@ -2,7 +2,11 @@ attrs==19.3.0
 Automat==0.7.0
 autopep8==1.4.4
 backcall==0.1.0
+beautifulsoup4==4.8.1
+bs4==0.0.1
+certifi==2019.9.11
 cffi==1.13.0
+chardet==3.0.4
 constantly==15.1.0
 cryptography==2.8
 cssselect==1.1.0
@@ -30,11 +34,15 @@ Pygments==2.4.2
 PyHamcrest==1.9.0
 pyOpenSSL==19.0.0
 queuelib==1.5.0
+requests==2.22.0
 Scrapy==1.7.3
+selenium==3.141.0
 service-identity==18.1.0
 six==1.12.0
+soupsieve==1.9.4
 traitlets==4.3.3
 Twisted==19.7.0
+urllib3==1.25.6
 w3lib==1.21.0
 wcwidth==0.1.7
 zope.interface==4.6.0
